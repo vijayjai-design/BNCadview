@@ -176,6 +176,11 @@ h1 span {
   color: var(--gold);
 }
 
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
 .lead {
   font-size: 1.08rem;
   color: var(--muted);
@@ -223,6 +228,16 @@ h1 span {
   overflow: hidden;
 }
 
+.home-visual {
+  background: linear-gradient(160deg, rgba(229,61,61,0.88), rgba(27,32,40,0.86)),
+              url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80") center/cover;
+}
+
+.landing-visual {
+  background: linear-gradient(160deg, rgba(229,61,61,0.85), rgba(27,32,40,0.82)),
+              url("https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80") center/cover;
+}
+
 .glass-card,
 .floating-card {
   background: rgba(16, 19, 24, 0.76);
@@ -252,67 +267,18 @@ h1 span {
   text-transform: uppercase;
 }
 
-.floating-card {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  padding: 0.9rem 1rem;
-  width: min(220px, 56%);
+.section {
+  padding: 4.5rem 0;
 }
 
-.floating-card span,
-.floating-card small {
-  display: block;
-  color: var(--muted);
-}
-
-.floating-card strong {
-  display: block;
-  margin: 0.5rem 0;
-}
-
-.logo-bar {
+.alt-section {
   background: rgba(255,255,255,0.02);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.logo-row {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 1.1rem 0;
-  text-align: center;
-  color: var(--muted);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.section {
-  padding: 4.5rem 0;
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: end;
-}
-
-h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.04em;
-}
-
-.intro p,
-.experience-copy li,
-.contact-list p,
-.menu-body p,
-.event-card p,
-.info-card p,
-.visit-card p {
-  color: var(--muted);
+.narrow {
+  max-width: 700px;
 }
 
 .cards-grid {
@@ -324,8 +290,10 @@ h2 {
 
 .info-card,
 .menu-card,
-.event-card,
-.visit-card {
+.visit-card,
+.mini-card,
+.info-panel,
+.ad-card {
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--line);
   border-radius: 22px;
@@ -347,8 +315,148 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.section-heading {
-  margin-bottom: 2rem;
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.checklist-panel {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.8rem;
+}
+
+.checklist-panel ul,
+.two-col-list ul,
+.info-panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.7rem;
+  color: var(--muted);
+}
+
+.three-up {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.stat-box {
+  padding: 1.6rem 1.4rem;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(229,61,61,0.12), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat-box strong {
+  display: block;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  letter-spacing: -0.04em;
+}
+
+.quote-box {
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.015);
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.page-hero {
+  padding: 4rem 0 2rem;
+}
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.campaign-copy p,
+.info-panel li,
+.two-col-list li,
+.mini-card p,
+.ad-info p,
+.info-card p,
+.contact-list p,
+.visit-card p {
+  color: var(--muted);
+}
+
+.info-panel {
+  padding: 1.5rem;
+}
+
+.strategy-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.mini-card {
+  padding: 1.5rem 1.25rem;
+}
+
+.ad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ad-card {
+  display: block;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.ad-card:hover,
+.ad-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(229,61,61,0.4);
+}
+
+.ad-preview {
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.ad-one {
+  background: linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80") center/cover;
+}
+
+.ad-two {
+  background: linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80") center/cover;
+}
+
+.ad-three {
+  background: linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80") center/cover;
+}
+
+.ad-four {
+  background: linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80") center/cover;
+}
+
+.ad-info {
+  padding: 1.2rem 1.1rem 1.4rem;
+}
+
+.ad-info span {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .menu-grid {
@@ -400,79 +508,6 @@ h2 {
   display: inline-block;
   margin-top: 0.8rem;
   color: var(--gold);
-}
-
-.experience-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-.experience-copy ul {
-  margin: 1.5rem 0 0;
-  padding-left: 1.2rem;
-  display: grid;
-  gap: 0.8rem;
-}
-
-.stats-panel {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.stat-box {
-  padding: 1.6rem 1.4rem;
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(229,61,61,0.12), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.stat-box strong {
-  display: block;
-  font-size: clamp(1.7rem, 3vw, 2.7rem);
-  letter-spacing: -0.04em;
-}
-
-.event-card {
-  display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 1rem;
-  padding: 1.1rem;
-}
-
-.event-day {
-  display: grid;
-  place-items: center;
-  min-height: 76px;
-  border-radius: 18px;
-  background: rgba(229,61,61,0.12);
-  font-weight: 800;
-  color: var(--gold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem;
-}
-
-.cta-band {
-  padding: 0 0 4.5rem;
-}
-
-.cta-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 2rem 2rem;
-  border: 1px solid var(--line);
-  background: linear-gradient(135deg, rgba(229,61,61,0.18), rgba(255,255,255,0.02));
-  border-radius: 26px;
 }
 
 .visit-grid {
@@ -534,13 +569,6 @@ textarea {
   width: 100%;
 }
 
-.form-status {
-  min-height: 1.4rem;
-  margin: 0;
-  color: var(--gold);
-  font-weight: 600;
-}
-
 .site-footer {
   padding: 1.7rem 0 2.6rem;
   border-top: 1px solid var(--line);
@@ -563,16 +591,17 @@ textarea {
 @media (max-width: 900px) {
   .hero-grid,
   .two-col,
-  .experience-grid,
-  .visit-grid,
+  .campaign-grid,
   .cards-grid,
+  .three-up,
   .menu-grid,
-  .events-grid {
+  .strategy-cards,
+  .ad-grid,
+  .visit-grid {
     grid-template-columns: 1fr;
   }
 
   .nav-wrap,
-  .cta-box,
   .footer-wrap {
     flex-direction: column;
     align-items: flex-start;
@@ -580,10 +609,6 @@ textarea {
 
   .main-nav {
     gap: 0.85rem;
-  }
-
-  .logo-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

@@ -7,6 +7,7 @@ if (form) {
     event.preventDefault();
     const button = form.querySelector("button");
     const previousText = button.textContent;
+
     button.textContent = "Request Sent";
     button.disabled = true;
 
