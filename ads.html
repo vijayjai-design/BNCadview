@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="BNC FieldHouse ad campaign page featuring four clickable display ads and campaign strategy details."
+      content="BNC FieldHouse ad campaign page featuring clickable display ads and campaign strategy details."
     />
     <title>BNC FieldHouse | Ad Campaign</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ads-layout.css" />
   </head>
   <body>
     <header class="site-header">
@@ -41,7 +42,7 @@
       <section class="page-hero">
         <div class="container">
           <p class="eyebrow">Ad Campaign</p>
-          <h1>Four display variations built around one strong BNC message.</h1>
+          <h1>Display variations built around one strong BNC message.</h1>
         </div>
       </section>
 
@@ -136,7 +137,8 @@
             <h2>Each variation routes visitors to the dedicated landing page.</h2>
           </div>
 
-          <div class="ad-gallery" aria-label="Four clickable display ads for BNC FieldHouse">
+          <div class="ad-gallery ad-layout" aria-label="Clickable display ads for BNC FieldHouse">
+            <!-- Top: 728x90 -->
             <a class="ad-card ad-card--poster ad-card--leaderboard" href="landing.html" aria-label="Open the leaderboard display ad">
               <span class="ad-card__label">Leaderboard 728×90</span>
               <span class="ad-visual ad-visual--leaderboard">
@@ -146,15 +148,7 @@
               </span>
             </a>
 
-            <a class="ad-card ad-card--poster ad-card--medium" href="landing.html" aria-label="Open the medium rectangle display ad">
-              <span class="ad-card__label">Medium Rectangle 300×250</span>
-              <span class="ad-visual ad-visual--medium">
-                <span class="ad-badge">BNC</span>
-                <span class="ad-title">50¢<br />Wings</span>
-                <span class="ad-subtitle">Bring the crew</span>
-              </span>
-            </a>
-
+            <!-- Left: 160x600 -->
             <a class="ad-card ad-card--poster ad-card--skyscraper" href="landing.html" aria-label="Open the skyscraper display ad">
               <span class="ad-card__label">Skyscraper 160×600</span>
               <span class="ad-visual ad-visual--skyscraper">
@@ -164,12 +158,44 @@
               </span>
             </a>
 
-            <a class="ad-card ad-card--poster ad-card--mobile" href="landing.html" aria-label="Open the mobile banner display ad">
-              <span class="ad-card__label">Mobile Banner 320×50</span>
-              <span class="ad-visual ad-visual--mobile">
+            <!-- Center: 320x50, 300x250, 336x280 -->
+            <div class="ad-stack">
+              <a class="ad-card ad-card--poster ad-card--mobile" href="landing.html" aria-label="Open the mobile banner display ad">
+                <span class="ad-card__label">Mobile Banner 320×50</span>
+                <span class="ad-visual ad-visual--mobile">
+                  <span class="ad-badge">BNC</span>
+                  <span class="ad-title">Game day starts here</span>
+                  <span class="ad-cta">Visit</span>
+                </span>
+              </a>
+
+              <a class="ad-card ad-card--poster ad-card--medium" href="landing.html" aria-label="Open the medium rectangle display ad">
+                <span class="ad-card__label">Medium Rectangle 300×250</span>
+                <span class="ad-visual ad-visual--medium">
+                  <span class="ad-badge">BNC</span>
+                  <span class="ad-title">50¢<br />Wings</span>
+                  <span class="ad-subtitle">Bring the crew</span>
+                </span>
+              </a>
+
+              <a class="ad-card ad-card--poster ad-card--rectangle" href="landing.html" aria-label="Open the large rectangle display ad">
+                <span class="ad-card__label">Large Rectangle 336×280</span>
+                <span class="ad-visual ad-visual--rectangle">
+                  <span class="ad-badge">BNC</span>
+                  <span class="ad-title">Music<br />Bingo</span>
+                  <span class="ad-subtitle">Wednesday nights</span>
+                </span>
+              </a>
+            </div>
+
+            <!-- Right: 300x600 -->
+            <a class="ad-card ad-card--poster ad-card--halfpage" href="landing.html" aria-label="Open the half page display ad">
+              <span class="ad-card__label">Half Page 300×600</span>
+              <span class="ad-visual ad-visual--halfpage">
                 <span class="ad-badge">BNC</span>
-                <span class="ad-title">Game day starts here</span>
-                <span class="ad-cta">Visit</span>
+                <span class="ad-title">Wednesday<br />Wings &amp;<br />Music Bingo</span>
+                <span class="ad-price">50¢ WINGS</span>
+                <span class="ad-cta">Visit BNC FieldHouse</span>
               </span>
             </a>
           </div>
