@@ -1,60 +1,132 @@
-/* Ad layout: 728x90 on top; 160x600 | (320x50, 300x250, 336x280) | 300x600 below */
-.ad-gallery.ad-layout {
-  grid-template-columns: 160px 336px 300px;
+.top-ad {
+  display: flex;
   justify-content: center;
-  align-items: start;
-  gap: 1.25rem;
+  padding-top: 1rem;
 }
 
-.ad-layout .ad-card {
-  padding: 0.75rem;
+.top-ad .ad-card {
+  width: min(100%, 760px);
 }
 
-.ad-layout .ad-card--leaderboard {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-width: 728px;
-  justify-self: center;
-}
-
-.ad-layout .ad-stack {
+.campaign-layout {
   display: grid;
-  gap: 1.25rem;
+  grid-template-columns: 160px minmax(0, 1fr) 300px;
+  align-items: start;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.campaign-main {
   min-width: 0;
 }
 
-.ad-layout .ad-card--leaderboard .ad-visual { min-height: 90px; }
-.ad-layout .ad-card--mobile .ad-visual { min-height: 50px; }
-.ad-layout .ad-card--medium .ad-visual { min-height: 250px; }
-.ad-layout .ad-card--rectangle .ad-visual {
+.campaign-main .container {
+  width: 100%;
+}
+
+.campaign-overview.section {
+  padding-top: 0;
+}
+
+.campaign-main .section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.campaign-main .campaign-overview {
+  padding-bottom: 1rem;
+}
+
+.ad-rail {
+  min-width: 0;
+  padding-top: 2rem;
+}
+
+.ad-rail .ad-card {
+  padding: 0.75rem;
+}
+
+.ad-card--leaderboard .ad-visual {
+  min-height: 90px;
+}
+
+.ad-card--mobile .ad-visual {
+  min-height: 50px;
+}
+
+.ad-card--medium .ad-visual {
+  min-height: 250px;
+}
+
+.ad-card--rectangle .ad-visual {
   min-height: 280px;
   padding: 1rem;
   gap: 0.5rem;
 }
-.ad-layout .ad-card--rectangle .ad-title {
+
+.ad-card--rectangle .ad-title {
   font-size: clamp(1.5rem, 2.4vw, 2.2rem);
 }
-.ad-layout .ad-card--skyscraper .ad-visual { min-height: 600px; }
-.ad-layout .ad-card--halfpage .ad-visual {
+
+.ad-card--skyscraper .ad-visual {
+  min-height: 600px;
+}
+
+.ad-card--halfpage .ad-visual {
   min-height: 600px;
   padding: 1.25rem;
   gap: 1rem;
 }
-.ad-layout .ad-card--halfpage .ad-title {
+
+.ad-card--halfpage .ad-title {
   font-size: clamp(1.8rem, 2.8vw, 2.6rem);
 }
 
+.in-content-ad {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.in-content-ad .ad-card {
+  width: min(100%, 360px);
+}
+
+.in-content-ad--rectangle {
+  padding-top: 0;
+}
+
 @media (max-width: 900px) {
-  .ad-gallery.ad-layout {
-    grid-template-columns: minmax(0, 336px);
-    justify-content: center;
-    align-items: stretch;
+  .campaign-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .ad-layout .ad-card--leaderboard {
-    max-width: none;
+
+  .campaign-main {
+    grid-column: 1 / -1;
+    grid-row: 1;
   }
-  .ad-layout .ad-card--skyscraper .ad-visual,
-  .ad-layout .ad-card--halfpage .ad-visual {
+
+  .ad-rail {
+    padding-top: 0;
+  }
+
+  .ad-rail .ad-card {
+    width: min(100%, 340px);
+    margin: 0 auto;
+  }
+
+  .ad-card--skyscraper .ad-visual,
+  .ad-card--halfpage .ad-visual {
     min-height: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .campaign-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ad-rail {
+    grid-column: 1;
   }
 }
